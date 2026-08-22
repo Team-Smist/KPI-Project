@@ -89,7 +89,7 @@ in design and development.
 |---|---|---|
 | 4 | **Username / Password** | Temp credentials at invite time → forced reset → MFA per org policy. Enforced password-policy check. |
 | 5 | **Admin Profile Creation** | Capture profile details (name, contact, designation). |
-| 6 | **Create Sub-Admins** (optional) | Scope and permissions capped at ≤ creator's own; every event logged and visible to Super Admin regardless of delegation depth. |
+| 6 | **Create Sub-Admins** | Scope and permissions capped at ≤ creator's own; every event logged and visible to Super Admin regardless of delegation depth. |
 | 7 | **Assign Group Members** | Assign members to admin groups. |
 
 ### Phase 3: Team & User Management
@@ -229,13 +229,3 @@ Control, and Notification services from the main blueprint, invoked with a narro
   governance/cataloging.
 - **Clarified:** KPI schema requires direction, warning/critical thresholds, and an owner.
 
----
-
-## 9. Open Questions Worth Resolving Before Build
-
-1. Is there a **maximum delegation depth** (Super Admin → Admin → Admin → …), or is it
-   unbounded as long as scope/permissions only shrink at each level?
-2. Can one Admin manage **multiple** divisions/sectors, or exactly one?
-3. Is the KPI **owner** always the Team Lead, or can it be any user regardless of team role?
-4. For "Organization architecture" — is a read-only auto-generated view sufficient, or is
-   there a specific editing capability intended here that isn't captured elsewhere?

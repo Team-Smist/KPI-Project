@@ -182,16 +182,3 @@ already defined, invoked with Team-Leader scope.
 - **Added:** Alerts, reports, and analytics phase, scoped to the Team Leader's own team.
 - **Added:** Explicit boundaries and audit logging, matching the pattern already established
   at Admin and Super Admin level.
-
----
-
-## 9. Open Questions Worth Resolving Before Build
-
-1. Can a Team Leader assign members to *any* activity freely, or only to activities/templates
-   pre-defined by the Admin?
-2. For a member transfer, does only the requesting Admin need to approve, or does the
-   receiving team's Admin also need to sign off when the transfer crosses divisions?
-3. Is "missed target" purely system-detected from the KPI thresholds, or should the Team
-   Leader also be able to flag a miss manually in edge cases the system wouldn't catch?
-4. Should Team Leaders be able to define lightweight, team-internal tracking metrics, or are
-   they restricted to viewing only the KPIs the Admin has configured?

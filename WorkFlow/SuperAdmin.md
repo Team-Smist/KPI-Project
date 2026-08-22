@@ -194,7 +194,6 @@ warehouse for historical/trend calculations and from the operational DB for anyt
 - Field-level data masking enforced at the query layer, not just in the UI (a masked field shouldn't be retrievable via API either).
 - MFA for all admin accounts at minimum; SSO/SAML for enterprise tenants.
 - Full audit log of who accessed/exported/changed what — this becomes non-negotiable the moment healthcare or finance industries are onboarded.
-- Data residency: if an org selects EU countries or a regulated industry, storage region and applicable framework (GDPR, HIPAA, etc.) should be captured during onboarding, not assumed.
 
 ### 4.5 Non-Functional Considerations
 
@@ -244,22 +243,3 @@ KPI Engine focused purely on "what is the number," the AI/Insights Service focus
 suggest is happening," and the DSS focused on "given that, what should we do." It also means the DSS respects
 the Access Control Service's permission matrix from Section 3, step 13 — a department manager only sees
 recommendations scoped to what they're allowed to act on.
-
-### 5.4 Build it in stages, not all at once
-
-1. **Stage 1 — Advisory only.** Weighted scoring (MCDA) over manually-triggered what-if scenarios. No autonomous action. This alone delivers most of the value and is the safest starting point.
-2. **Stage 2 — Breach-triggered recommendations.** Automatically generate a recommendation when a KPI crosses its critical threshold, routed through the existing approval workflow.
-3. **Stage 3 — Bounded automation.** Only after Stage 1–2 have a track record: allow specific, narrowly-scoped actions to execute automatically within admin-defined guardrails (e.g., "auto-reorder inventory below X units, up to $Y," never "auto-adjust pricing org-wide").
-
-Don't skip straight to Stage 3 — an unproven scoring model making unsupervised decisions on real budgets is
-exactly the kind of thing that erodes trust in the whole platform if it gets one recommendation visibly wrong.
-
----
-
-## 6. Suggested Next Steps
-
-1. Wireframe the revised onboarding flow (Section 3) before writing onboarding backend logic — the KPI threshold and data source credential steps materially change what the DB schema needs to support.
-2. Define the industry → monitoring-area mapping table as actual data, not just examples, since it drives step 7 dynamically.
-3. Decide the multi-tenancy isolation model (Section 4.5) before building the Access Control Service — it's foundational and costly to retrofit.
-4. Spec out the AI autonomy guardrails (what "Automated" can and can't do unsupervised) before AI capabilities ship, not after.
-5. If building the DSS, start with Stage 1 (Section 5.4) — a manually-triggered, advisory-only scenario simulator — before wiring it to automatic triggers or any autonomous execution.

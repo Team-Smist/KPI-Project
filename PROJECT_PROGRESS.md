@@ -47,3 +47,28 @@ Supervisors: Dr. Dilini & Lashan Silva (eZuite Cloud)
 * **Referencing Rules:** Research papers must be explicitly cited in the Background, Motivation, Intro, and Problem in Brief sections using standard bracketed numbering (e.g., [3], [6], [7]).
 * **Project Scope Lock:** Course rules dictate that changes can still be made at the proposal level, but **no changes** will be allowed after the interim level.
 * **User Feedback System:** It is a mandatory requirement to collect "real feedback" from at least **50 people** using a 1 to 5 rating scale (1 = very poor, 5 = very good).
+
+---
+
+### Meeting #3 Overview (Pre-Meeting Sprint & Homework)
+> **Mode:** Group Sync / WhatsApp Collaboration  
+> **Date:** August 21 - August 23, 2026  
+> **Topic:** System Architecture Blueprint, Use Case Modeling & Role Specifications  
+
+#### 🎯 Assigned Action Items
+| Task Description | Assigned To | Status | Deadline |
+| :--- | :--- | :---: | :--- |
+| **System Blueprinting:** Finalize markdown documentation for all 4 tier roles | Team SMIST | 🟢 Completed | **August 23, 2026** |
+| **Use Case & Workflow Diagrams:** Compare versions (V2 vs V3) and finalize | Shahanmi / Dev | 🟡 In Progress | **Next Weekend Meeting** |
+| **Presentation Prep:** Prepare role-based explanations for the supervisor | All Members | 🟡 In Progress | **Next Weekend Meeting** |
+
+#### 📝 Key Discussion Points
+* **System Modules & Use Case Finalization:** Successfully mapped out 28 core Use Cases across 5 primary system modules: (1) Data Management & Integration, (2) Security, Access & RLS, (3) Dashboards & Visualization, (4) AI & ML Analytics, and (5) Alerting & Diagnostics.
+* **Actor Hierarchy & RBAC:** Established a strict 4-tier Role-Based Access Control (RBAC) model. 
+  * *Super Admin:* Complete tenant configuration & AI policies.
+  * *Admin:* Division scope, team creation, data source management.
+  * *Team Leader:* Member activity assignment, transfer requests, root-cause logging.
+  * *User/Member:* RLS-governed personal KPI exploration.
+* **Data Governance vs. Quality:** Reached a critical architectural decision regarding data validation. The system will utilize **OpenMetadata** for Data Governance, Lineage, and Cataloging, and **Great Expectations** for rule-based Data Quality Validation. (Commercial tools like Atlan were rejected to maintain open-source university project requirements).
+* **AI Decision Support System (DSS):** Defined the AI's autonomy level. The DSS will operate in an "Advisory" capacity utilizing Multi-Criteria Decision Analysis (MCDA), meaning it will simulate what-if scenarios and recommend actions, but humans must explicitly approve them.
+* **Presentation Delegation:** To effectively explain the complex architecture during the upcoming supervisor meeting, the team delegated presentation segments matching the system's actual roles: Ishara (Super Admin), Sithira (Admin), Thiseni (Team Leader), and Madhura (User).
